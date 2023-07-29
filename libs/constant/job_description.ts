@@ -8,7 +8,7 @@ export interface JobDescription {
 const getJobDescription: JobDescription[] = [
     {
         duration: "Nov 2022 - Present",
-        position: "Software Developer @ FPT Software Malaysia (Contracted)",
+        position: "Software Developer @ FPT Software Malaysia (Contract)",
         details: [
             "Study requirements from client sides collected by BA.",
             "Development of Frontend or Backend project according task requirements.",

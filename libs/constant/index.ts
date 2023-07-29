@@ -1,1 +1,6 @@
-export const HeaderLinks = ["Home", "Projects", "Contact"] as const;
+export const HeaderLinks = [
+    "Home",
+    "Experiences",
+    "Projects",
+    "Contact",
+] as const;

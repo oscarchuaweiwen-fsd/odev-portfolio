@@ -76,7 +76,6 @@ const Navbar = () => {
                     })}
                 </Holder>
             </Box>
-
             <MotionBox ref={scope}>
                 {currentTheme == "dark" ? (
                     <DarkModeIcon

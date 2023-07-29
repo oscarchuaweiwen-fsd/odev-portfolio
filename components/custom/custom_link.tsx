@@ -19,15 +19,7 @@ const CustomLink = ({
 
     useEffect(() => {
         const animation = async () => {
-            await animate(scope.current, { rotate: -90 });
-            await animate(scope.current, { scale: 1.5 });
-            await animate(scope.current, { rotate: 0 });
-            await animate(scope.current, { scale: 1 });
-            await animate(
-                scope.current,
-                { opacity: 1, y: 0 },
-                { duration: 1, delay: index * 0.1, ease: "easeInOut" },
-            );
+            await animate(scope.current, { y: 0, delay: index * 0.2 });
         };
 
         animation();
@@ -39,7 +31,7 @@ const CustomLink = ({
             href={{ pathname: `/${link !== "Home" ? link.toLowerCase() : ""}` }}
             style={{ textDecoration: "none" }}
         >
-            <BoxMotion ref={scope} initial={{ opacity: 1 }}>
+            <BoxMotion ref={scope} initial={{ opacity: 1, y: -300 }}>
                 <Typography
                     sx={({ palette }) => ({
                         color: isActive

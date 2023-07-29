@@ -9,15 +9,25 @@ import CustomLink from "../custom/custom_link";
 import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import { motion, useAnimate } from "framer-motion";
 
 const Navbar = () => {
     const pathname = usePathname();
     const data = pathname.split("/")[1] == "" ? "Home" : pathname.split("/")[1];
     const { toggleTheme, theme } = useContext(ThemeContext);
+    const [scope, animate] = useAnimate();
 
     const currentTheme = useMemo(() => {
         return theme;
     }, [theme]);
+
+    const MotionBox = motion(Box);
+
+    const toggleAnimation = async () => {
+        await animate(scope.current, { scale: 1 });
+        await animate(scope.current, { scale: 0.1 });
+        toggleTheme();
+    };
 
     return (
         <Holder
@@ -67,13 +77,33 @@ const Navbar = () => {
                 </Holder>
             </Box>
 
-            <Box>
+            <MotionBox ref={scope}>
                 {currentTheme == "dark" ? (
-                    <DarkModeIcon onClick={toggleTheme} />
+                    <DarkModeIcon
+                        onClick={toggleAnimation}
+                        sx={({ palette }) => {
+                            return {
+                                cursor: "pointer",
+                                "&:hover": {
+                                    color: palette.custom.grey,
+                                },
+                            };
+                        }}
+                    />
                 ) : (
-                    <LightModeIcon onClick={toggleTheme} />
+                    <LightModeIcon
+                        onClick={toggleAnimation}
+                        sx={({ palette }) => {
+                            return {
+                                cursor: "pointer",
+                                "&:hover": {
+                                    color: palette.custom.grey,
+                                },
+                            };
+                        }}
+                    />
                 )}
-            </Box>
+            </MotionBox>
         </Holder>
     );
 };

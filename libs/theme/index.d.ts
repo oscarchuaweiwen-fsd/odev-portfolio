@@ -1,4 +1,4 @@
-import { colorTheme } from "../theme";
+import { colorTheme } from "@/libs/theme/color_theme";
 
 declare module "@mui/material/styles" {
     interface Theme {

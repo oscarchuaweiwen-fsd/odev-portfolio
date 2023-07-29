@@ -1,6 +1,7 @@
 import Holder from "@/components/common/holder";
 import { Box, Typography } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
+import Container from "@mui/material/Container";
 
 export default function Home() {
     const imgAnimation = useAnimation();
@@ -21,6 +22,7 @@ export default function Home() {
             sx={{
                 display: "flex",
                 justifyContent: "center",
+                flexDirection: "column",
                 height: "auto",
                 marginY: "20px",
                 alignItems: "center",
@@ -108,6 +110,26 @@ export default function Home() {
                     applications. You can find my projects in my github repo.
                 </Typography>
             </Box>
+
+            <Holder
+                sx={{
+                    display: "flex",
+                    width: "100vw",
+                    justifyContent: "center",
+                    marginTop: "20px",
+                }}
+            >
+                <Typography
+                    variant={"subtitle2"}
+                    sx={({ palette }) => {
+                        return {
+                            color: palette.custom.grey,
+                        };
+                    }}
+                >
+                    &copy; 2023 - Oscar Chua Wei Wen. All rights reserved.
+                </Typography>
+            </Holder>
         </Holder>
     );
 }

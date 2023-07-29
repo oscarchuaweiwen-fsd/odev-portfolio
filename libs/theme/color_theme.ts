@@ -5,7 +5,7 @@ const colorTheme = {
     },
     black: "#000",
     white: "#FFF",
-    grey: "#505050",
+    grey: "#BBBCBB",
     red: {
         dark: "#F11223",
         light: "#F44250",

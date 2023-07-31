@@ -16,7 +16,18 @@ const JobDescription = ({ job }: { job: JobDescription }) => {
                     paddingRight: 10,
                 }}
             >
-                <Typography variant="subtitle2" fontWeight={"1000"}>
+                <Typography
+                    variant="subtitle2"
+                    sx={({ palette }) => {
+                        return {
+                            color:
+                                palette.mode == "dark"
+                                    ? palette.custom.grey
+                                    : "black",
+                        };
+                    }}
+                    fontWeight={"1000"}
+                >
                     {job.duration}
                 </Typography>
             </Box>
@@ -42,7 +53,10 @@ const JobDescription = ({ job }: { job: JobDescription }) => {
                                 variant="subtitle2"
                                 sx={({ palette }) => {
                                     return {
-                                        color: palette.custom.grey,
+                                        color:
+                                            palette.mode == "dark"
+                                                ? palette.custom.grey
+                                                : "black",
                                     };
                                 }}
                             >

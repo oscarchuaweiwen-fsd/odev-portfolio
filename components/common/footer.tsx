@@ -17,7 +17,10 @@ export default function Footer() {
                 variant={"subtitle2"}
                 sx={({ palette }) => {
                     return {
-                        color: palette.custom.grey,
+                        color:
+                            palette.mode == "dark"
+                                ? palette.custom.grey
+                                : "#000",
                     };
                 }}
             >

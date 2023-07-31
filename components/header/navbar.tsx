@@ -1,7 +1,6 @@
 "use client";
 import Holder from "@/components/common/holder";
 import { HeaderLinks } from "@/libs/constant";
-import { Image } from "@mui/icons-material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Box } from "@mui/material";
 import { usePathname } from "next/navigation";
@@ -10,6 +9,8 @@ import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { motion, useAnimate } from "framer-motion";
+import logo from "@/public/images/icons/android-icon-192x192.png";
+import Image from "next/image";
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -44,7 +45,7 @@ const Navbar = () => {
             }}
         >
             <Box>
-                <Image />
+                <Image src={logo} alt="logo" height={36} width={36} />
             </Box>
 
             <Box>

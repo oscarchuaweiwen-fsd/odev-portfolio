@@ -2,6 +2,7 @@ import Holder from "@/components/common/holder";
 import { Box, Typography } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "../common/footer";
+import { Descriptions } from "@/libs/constant";
 
 export default function Home() {
     const imgAnimation = useAnimation();
@@ -57,60 +58,40 @@ export default function Home() {
                     Odev
                 </TextMotion>
 
-                <Typography sx={{ color: "white" }}>
+                <Typography
+                    sx={({ palette }) => {
+                        return {
+                            color:
+                                palette.mode == "dark"
+                                    ? palette.custom.grey
+                                    : palette.custom.black,
+                        };
+                    }}
+                >
                     Work hard in silence, let success make the noise.
                 </Typography>
 
-                <Typography
-                    variant={"subtitle1"}
-                    sx={({ palette }) => {
-                        return {
-                            color: palette.custom.grey,
-                            lineHeight: "2",
-                            textAlign: "justify",
-                        };
-                    }}
-                >
-                    I&apos;m Oscar Chua Wei Wen, a full stack developer from
-                    Malaysia. I build software both for fun and for a living.
-                    I&apos;m passionate about learning new technologies and
-                    building things that make people&apos;s lives easier.
-                </Typography>
-
-                <Typography
-                    variant={"subtitle1"}
-                    sx={({ palette }) => {
-                        return {
-                            color: palette.custom.grey,
-                            lineHeight: "2",
-                            textAlign: "justify",
-                        };
-                    }}
-                >
-                    I have been coding since 2021, and it all started when I
-                    received my last year of university project from my mentor.
-                    Later on, I got my first job and landed as a full stack
-                    developer at Hatio Sea Sdn Bhd.
-                </Typography>
-
-                <Typography
-                    variant={"subtitle1"}
-                    sx={({ palette }) => {
-                        return {
-                            color: palette.custom.grey,
-                            lineHeight: "2",
-                            textAlign: "justify",
-                        };
-                    }}
-                >
-                    Typescript, Java, Javascript are my primary language in my
-                    career path, although I believe that I am capable of using
-                    other languages as well, aside from PHP. Most of my time is
-                    focusing on web applications, mobile applications, backend
-                    applications. You can find my projects in my github repo.
-                </Typography>
+                {Descriptions.map((items, index) => {
+                    return (
+                        <Typography
+                            key={index}
+                            variant={"subtitle1"}
+                            sx={({ palette }) => {
+                                return {
+                                    color:
+                                        palette.mode == "dark"
+                                            ? palette.custom.grey
+                                            : palette.custom.black,
+                                    lineHeight: "2",
+                                    textAlign: "justify",
+                                };
+                            }}
+                        >
+                            {items}
+                        </Typography>
+                    );
+                })}
             </Box>
-
             <Footer />
         </Holder>
     );

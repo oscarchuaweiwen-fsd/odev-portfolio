@@ -4,12 +4,7 @@ import React from "react";
 export const metadata: Metadata = {
     title: "Odev | Experience",
     description: "Odev's experience",
-    openGraph: {
-        url: "https://odev-porfolio.vercel.app/experience",
-    },
-    icons: {
-        icon: "/images/icons/android-icon-96x96.png",
-    },
+    creator: "Oscar Chua Wei Wen",
 };
 
 export default function ExperienceLayout({

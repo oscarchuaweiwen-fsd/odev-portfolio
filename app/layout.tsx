@@ -6,12 +6,11 @@ import "./global.css";
 export const metadata: Metadata = {
     title: "Odev | Home",
     description: "Odev's Home",
+    icons: "/icon.png",
     openGraph: {
         url: "https://odev-porfolio.vercel.app",
     },
-    icons: {
-        icon: "/images/icons/android-icon-96x96.png",
-    },
+    creator: "Oscar Chua Wei Wen",
 };
 
 export default function RootLayout({

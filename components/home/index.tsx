@@ -51,6 +51,7 @@ export default function Home() {
                     variant={"h2"}
                     fontWeight={1000}
                     sx={{
+                        zIndex: 9999,
                         textShadow: "4px 1px #0FFBF9, -4px 1px #FF3F4A",
                     }}
                     exit={{ opacity: 0 }}

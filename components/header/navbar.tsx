@@ -3,7 +3,7 @@ import Holder from "@/components/common/holder";
 import { HeaderLinks } from "@/libs/constant";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Box } from "@mui/material";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import CustomLink from "../custom/custom_link";
 import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
@@ -11,12 +11,14 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { motion, useAnimate } from "framer-motion";
 import logo from "@/public/images/icons/android-icon-192x192.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
     const pathname = usePathname();
     const data = pathname.split("/")[1] == "" ? "Home" : pathname.split("/")[1];
     const { toggleTheme, theme } = useContext(ThemeContext);
     const [scope, animate] = useAnimate();
+    const router = useRouter();
 
     const currentTheme = useMemo(() => {
         return theme;
@@ -34,7 +36,7 @@ const Navbar = () => {
         <Holder
             sx={{
                 top: 0,
-                zIndex: 2,
+                zIndex: 9999,
                 position: "sticky",
                 display: "flex",
                 padding: "16px 24px !important",
@@ -45,7 +47,17 @@ const Navbar = () => {
             }}
         >
             <Box>
-                <Image src={logo} alt="logo" height={36} width={36} />
+                <Link href="/">
+                    <Image
+                        onClick={() => {
+                            router.push("/");
+                        }}
+                        src={logo}
+                        alt="logo"
+                        height={36}
+                        width={36}
+                    />
+                </Link>
             </Box>
 
             <Box>

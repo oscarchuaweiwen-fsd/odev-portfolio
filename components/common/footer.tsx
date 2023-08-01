@@ -7,10 +7,10 @@ export default function Footer() {
         <Holder
             sx={{
                 display: "flex",
-                width: "100vw",
+                width: "80vw",
                 justifyContent: "center",
                 alignItems: "center",
-                marginTop: "20px",
+                marginTop: "40px",
                 textAlign: "center",
             }}
         >

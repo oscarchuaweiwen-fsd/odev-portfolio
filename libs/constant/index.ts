@@ -24,3 +24,28 @@ export const Descriptions = [
                     applications. You can find my projects in my github repo.
 `,
 ];
+
+export const Projects = [
+    {
+        title: "UMP Cafe Supply Chain Management System",
+        image_url: "https://oscar-portfolio.vercel.app/project1.png",
+        description:
+            "Final year project for my degree. A supply chain management system for UMP Cafe.",
+        github_link:
+            "https://github.com/oscarchuaweiwen-fsd/-Angular-UMPCafeSupplyChainManagementSystem",
+    },
+    {
+        title: "Megaview Hotel FeedBack Management System",
+        image_url: "https://i.imgur.com/o5EiYEA.png",
+        description:
+            "To develop a feedback management system for Megaview Hotel at Kuantan.",
+        github_link: "https://feedback.mvh.group/department",
+    },
+    {
+        title: "Auto Reflections Management Application",
+        image_url: "https://i.imgur.com/rAxogBB.png",
+        description:
+            "To develop a mobile applications using Flutter to my client to manage their business.",
+        github_link: "",
+    },
+];

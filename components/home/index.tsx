@@ -64,7 +64,7 @@ export default function Home() {
                         return {
                             color:
                                 palette.mode == "dark"
-                                    ? palette.custom.grey
+                                    ? palette.custom.white
                                     : palette.custom.black,
                         };
                     }}

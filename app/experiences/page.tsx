@@ -12,6 +12,7 @@ export default function page() {
             <Experience />
 
             <Cursor />
+
             <Footer />
         </div>
     );

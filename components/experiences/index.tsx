@@ -18,22 +18,7 @@ export default function Experience() {
                 {getJobDescription.map((job, idx) => {
                     return (
                         <>
-                            <Box
-                                key={idx}
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: {
-                                        xs: "column",
-                                        sm: "row",
-                                        md: "row",
-                                        lg: "row",
-                                        xl: "row",
-                                    },
-                                    margin: 5,
-                                }}
-                            >
-                                <JobDescription job={job} />
-                            </Box>
+                            <JobDescription key={idx} job={job} index={idx} />
 
                             <Divider />
                         </>

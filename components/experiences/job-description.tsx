@@ -1,9 +1,39 @@
 import { JobDescription } from "@/libs/constant/job_description";
 import { Box, Chip, Typography } from "@mui/material";
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
-const JobDescription = ({ job }: { job: JobDescription }) => {
+const JobDescription = ({
+    job,
+    index,
+}: {
+    job: JobDescription;
+    index: number;
+}) => {
+    const MotionBox = motion(Box);
+
     return (
-        <>
+        <MotionBox
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 0.5,
+                delay: index * 0.5,
+                type: "ease",
+                bounce: 0.25,
+            }}
+            sx={{
+                display: "flex",
+                flexDirection: {
+                    xs: "column",
+                    sm: "row",
+                    md: "row",
+                    lg: "row",
+                    xl: "row",
+                },
+                margin: 5,
+            }}
+        >
             <Box
                 sx={{
                     width: {
@@ -73,7 +103,7 @@ const JobDescription = ({ job }: { job: JobDescription }) => {
                     })}
                 </Box>
             </Box>
-        </>
+        </MotionBox>
     );
 };
 

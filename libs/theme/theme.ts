@@ -8,10 +8,7 @@ export const getTheme = (mode: PaletteMode) => {
         palette: {
             mode: mode,
             primary: {
-                main: mode == "light" ? "#1976d2" : "#14a65f",
-            },
-            secondary: {
-                main: "#dc004e",
+                main: mode == "light" ? "#000" : "#121212",
             },
             background: {
                 default: mode === "light" ? "#F0E7DB" : "#121212",

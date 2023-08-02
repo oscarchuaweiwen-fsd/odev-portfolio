@@ -1,7 +1,6 @@
 import { JobDescription } from "@/libs/constant/job_description";
 import { Box, Chip, Typography } from "@mui/material";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect } from "react";
 
 const JobDescription = ({
     job,

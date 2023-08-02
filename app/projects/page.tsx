@@ -1,5 +1,6 @@
 import Footer from "@/components/common/footer";
-import Navbar from "@/components/header/navbar";
+import Cursor from "@/components/custom/custom_cursor";
+import Navbar from "@/components/common/header/navbar";
 import Project from "@/components/projects";
 
 export default function Page() {
@@ -7,6 +8,7 @@ export default function Page() {
         <div>
             <Navbar />
             <Project />
+            <Cursor />
             <Footer />
         </div>
     );

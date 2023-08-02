@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-import { motion, useAnimate, usePresence } from "framer-motion";
-import { useContext, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useContext } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
 
 const CustomLink = ({
@@ -14,16 +14,7 @@ const CustomLink = ({
     index: number;
 }>) => {
     const BoxMotion = motion(Box);
-    const [scope, animate] = useAnimate();
-    const { theme } = useContext(ThemeContext);
-
-    useEffect(() => {
-        const animation = async () => {
-            await animate(scope.current, { y: 0, delay: index * 0.2 });
-        };
-
-        animation();
-    }, [theme]);
+    useContext(ThemeContext);
 
     return (
         <Link
@@ -31,7 +22,11 @@ const CustomLink = ({
             href={{ pathname: `/${link !== "Home" ? link.toLowerCase() : ""}` }}
             style={{ textDecoration: "none" }}
         >
-            <BoxMotion ref={scope} initial={{ opacity: 1, y: -300 }}>
+            <BoxMotion
+                initial={{ opacity: 0, y: -300 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+            >
                 <Typography
                     sx={({ palette }) => ({
                         color: isActive

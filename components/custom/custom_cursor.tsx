@@ -8,9 +8,6 @@ export default function Cursor() {
     const [scope, animate] = useAnimate();
 
     const handleMouseMove = (e: any) => {
-        // get window size
-        console.log(e.clientX, window.innerWidth);
-
         if (e.clientX > window.innerWidth - 10) return;
         if (e.clientY > window.innerHeight - 10) return;
 

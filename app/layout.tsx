@@ -2,6 +2,7 @@ import Provider from "@/app/provider";
 import ThemeLayout from "@/libs/hooks/theme_context";
 import type { Metadata } from "next";
 import "./global.css";
+import GoogleAnalytics from "./google_analytics";
 
 export const metadata: Metadata = {
     title: "Odev | Home",
@@ -21,6 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <GoogleAnalytics />
                 <ThemeLayout>
                     <Provider>{children}</Provider>
                 </ThemeLayout>

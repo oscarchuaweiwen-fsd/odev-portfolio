@@ -17,11 +17,11 @@ export default function Experience() {
             <Box>
                 {getJobDescription.map((job, idx) => {
                     return (
-                        <>
+                        <div key={idx}>
                             <JobDescription key={idx} job={job} index={idx} />
 
                             <Divider />
-                        </>
+                        </div>
                     );
                 })}
             </Box>

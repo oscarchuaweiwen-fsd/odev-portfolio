@@ -4,7 +4,7 @@ import { HeaderLinks } from "@/libs/constant";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Box } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
-import CustomLink from "../custom/custom_link";
+import CustomLink from "@/components/custom/custom_link";
 import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
 import LightModeIcon from "@mui/icons-material/LightMode";

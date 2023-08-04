@@ -36,6 +36,7 @@ export const useGtag = () => {
         };
 
         if (savedPathNameRef.current !== pathname) {
+            // @ts-ignore
             handleRouteChange(new URL(pathname, window.location.origin));
             // Update REF
             savedPathNameRef.current = pathname;

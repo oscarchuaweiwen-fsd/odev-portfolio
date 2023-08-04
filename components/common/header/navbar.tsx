@@ -2,9 +2,10 @@
 import Holder from "@/components/common/holder";
 import { HeaderLinks } from "@/libs/constant";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
-import CustomLink from "@/components/custom/custom_link";
+import CustomLink from "@/components/common/custom/custom_link";
 import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/libs/hooks/theme_context";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -12,10 +13,12 @@ import { motion, useAnimate } from "framer-motion";
 import logo from "@/public/images/icons/android-icon-192x192.png";
 import Image from "next/image";
 import Link from "next/link";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Navbar = () => {
     const pathname = usePathname();
-    const data = pathname.split("/")[1] == "" ? "Home" : pathname.split("/")[1];
+    const data =
+        pathname!.split("/")[1] == "" ? "Home" : pathname!.split("/")[1];
     const { toggleTheme, theme } = useContext(ThemeContext);
     const [scope, animate] = useAnimate();
     const router = useRouter();
@@ -89,33 +92,57 @@ const Navbar = () => {
                     })}
                 </Holder>
             </Box>
-            <MotionBox ref={scope}>
-                {currentTheme == "dark" ? (
-                    <DarkModeIcon
-                        onClick={toggleAnimation}
-                        sx={({ palette }) => {
-                            return {
-                                cursor: "pointer",
-                                "&:hover": {
-                                    color: palette.custom.grey,
-                                },
-                            };
-                        }}
+
+            <Box
+                sx={{ display: "flex", flexDirection: "row", gridGap: "10px" }}
+            >
+                <Box>
+                    <LinkedInIcon
+                        onClick={() =>
+                            router.push(
+                                "https://www.linkedin.com/in/oscar-chua-wei-wen-489047216/",
+                            )
+                        }
                     />
-                ) : (
-                    <LightModeIcon
-                        onClick={toggleAnimation}
-                        sx={({ palette }) => {
-                            return {
-                                cursor: "pointer",
-                                "&:hover": {
-                                    color: palette.custom.grey,
-                                },
-                            };
-                        }}
+                </Box>
+
+                <Box>
+                    <GitHubIcon
+                        onClick={() =>
+                            router.push(
+                                "https://github.com/oscarchuaweiwen-fsd",
+                            )
+                        }
                     />
-                )}
-            </MotionBox>
+                </Box>
+                <MotionBox ref={scope}>
+                    {currentTheme == "dark" ? (
+                        <DarkModeIcon
+                            onClick={toggleAnimation}
+                            sx={({ palette }) => {
+                                return {
+                                    cursor: "pointer",
+                                    "&:hover": {
+                                        color: palette.custom.grey,
+                                    },
+                                };
+                            }}
+                        />
+                    ) : (
+                        <LightModeIcon
+                            onClick={toggleAnimation}
+                            sx={({ palette }) => {
+                                return {
+                                    cursor: "pointer",
+                                    "&:hover": {
+                                        color: palette.custom.grey,
+                                    },
+                                };
+                            }}
+                        />
+                    )}
+                </MotionBox>
+            </Box>
         </Holder>
     );
 };

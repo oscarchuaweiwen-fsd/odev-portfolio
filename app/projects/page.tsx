@@ -1,5 +1,5 @@
 import Footer from "@/components/common/footer";
-import Cursor from "@/components/custom/custom_cursor";
+import Cursor from "@/components/common/custom/custom_cursor";
 import Navbar from "@/components/common/header/navbar";
 import Project from "@/components/projects";
 

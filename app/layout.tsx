@@ -3,14 +3,12 @@ import ThemeLayout from "@/libs/hooks/theme_context";
 import type { Metadata } from "next";
 import "./global.css";
 import GoogleAnalytics from "./google_analytics";
+import React from "react";
 
 export const metadata: Metadata = {
     title: "Odev | Home",
     description: "Odev's Home",
     icons: "/icon.png",
-    openGraph: {
-        url: "https://odev-porfolio.vercel.app",
-    },
     creator: "Oscar Chua Wei Wen",
 };
 

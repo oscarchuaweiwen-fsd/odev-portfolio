@@ -1,8 +1,9 @@
 import Footer from "@/components/common/footer";
-import Cursor from "@/components/custom/custom_cursor";
+import Cursor from "@/components/common/custom/custom_cursor";
 import Experience from "@/components/experiences";
 import Navbar from "@/components/common/header/navbar";
 import React from "react";
+import SideMenu from "@/components/common/SideMenu";
 
 export default function page() {
     return (
@@ -11,8 +12,7 @@ export default function page() {
 
             <Experience />
 
-            <Cursor />
-
+            <SideMenu />
             <Footer />
         </div>
     );

@@ -4,7 +4,7 @@ const secret = process.env.NEXT_PUBLIC_JWT_SECRET as string;
 const signJWTTokens = async () => {
     try {
         const iat = Math.floor(Date.now() / 1000);
-        const exp = iat + 60 * 60; // one hour
+        const exp = iat + 60; // one hour
 
         const data = await new SignJWT({ msg: "" })
             .setProtectedHeader({ alg: "HS512", typ: "JWT" })

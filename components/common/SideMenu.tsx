@@ -64,23 +64,32 @@ export default function SideMenu() {
                 }}
             >
                 <Box
-                    sx={{
-                        height: "100%",
-                        width: "10rem",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
+                    sx={({ palette }) => {
+                        return {
+                            height: "100%",
+                            width: "10rem",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            background:
+                                palette.mode == "light" ? "#F0E7DB" : "#121212",
+                        };
                     }}
                 >
                     {HeaderLinks.map((link, index) => {
                         return (
                             <Box
                                 key={link}
-                                sx={{
-                                    background: "#5e5e5e",
-                                    width: "100%",
-                                    padding: "1rem",
+                                sx={({ palette }) => {
+                                    return {
+                                        background:
+                                            palette.mode == "light"
+                                                ? "#F0E7DB"
+                                                : "#121212",
+                                        width: "100%",
+                                        padding: "1rem",
+                                    };
                                 }}
                             >
                                 <CustomLink

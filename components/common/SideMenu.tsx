@@ -24,7 +24,8 @@ export default function SideMenu() {
                     position: "fixed",
                     padding: "0 !important",
                     top: "50%",
-                    right: "0 !important",
+                    left: "0 !important",
+                    width: "2rem",
                 }}
             >
                 <Box

@@ -93,7 +93,13 @@ export default function Contact() {
             <Box
                 sx={({ palette }) => {
                     return {
-                        width: "50%",
+                        width: {
+                            xs: "80%",
+                            md: "80%",
+                            lg: "50%",
+                            xl: "50%",
+                            xxl: "50%",
+                        },
                         backgroundColor: "rgba(255, 255, 255, 0.1)",
                         borderRadius: "5px",
                         padding: "20px",

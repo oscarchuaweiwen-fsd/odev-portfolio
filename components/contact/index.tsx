@@ -100,7 +100,8 @@ export default function Contact() {
                             xl: "50%",
                             xxl: "50%",
                         },
-                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                        backgroundColor:
+                            palette.mode == "dark" ? "#333" : "#fff",
                         borderRadius: "5px",
                         padding: "20px",
                     };
@@ -160,9 +161,28 @@ export default function Contact() {
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <Button
                             type="submit"
-                            sx={{ background: "white", my: 2 }}
+                            sx={({ palette }) => {
+                                return {
+                                    background:
+                                        palette.mode == "dark"
+                                            ? "#fff"
+                                            : "#333",
+                                    my: 2,
+                                };
+                            }}
                         >
-                            {messageState ? "Sending..." : "Submit"}
+                            <Typography
+                                sx={({ palette }) => {
+                                    return {
+                                        color:
+                                            palette.mode == "dark"
+                                                ? "#333"
+                                                : "#fff",
+                                    };
+                                }}
+                            >
+                                {messageState ? "Sending..." : "Submit"}
+                            </Typography>
                         </Button>
                     </Box>
                 </form>

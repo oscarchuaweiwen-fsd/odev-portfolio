@@ -38,9 +38,9 @@ export default async function handler(
                         "Your message is well received. I will contact you soon",
                     status: true,
                 });
-        } catch (error) {
+        } catch (error: any) {
             return res.status(500).json({
-                message: "Something went wrong",
+                message: error.toString(),
                 status: false,
             });
         }

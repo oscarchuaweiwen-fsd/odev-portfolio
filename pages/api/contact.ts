@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 export default async function handler(
     req: NextApiRequest,
@@ -9,6 +10,7 @@ export default async function handler(
 
     if (req.method == "POST") {
         try {
+            // @ts-ignore
             const transporter = nodemailer.createTransport({
                 host: "smtp-mail.outlook.com",
                 secureConnection: false,
@@ -21,7 +23,7 @@ export default async function handler(
                 tls: {
                     ciphers: "SSLv3",
                 },
-            });
+            } as SMTPTransport.Options);
 
             const info = await transporter.sendMail({
                 from: '"Fred Foo 👻" <chuaweiwen12345@hotmail.co.uk>', // sender address

@@ -17,8 +17,8 @@ export default async function handler(
                 port: 587,
                 service: "outlook",
                 auth: {
-                    user: "chuaweiwen12345@hotmail.co.uk",
-                    pass: "Joanne@020919",
+                    user: process.env.EMAIL,
+                    pass: process.env.PASSWORD,
                 },
                 tls: {
                     ciphers: "SSLv3",

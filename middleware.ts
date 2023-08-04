@@ -20,6 +20,8 @@ export async function middleware(request: NextRequest) {
 
     const result = await verifyJWTTokens(authToken);
 
+    console.log(result);
+
     if (!result) {
         return new NextResponse(
             JSON.stringify({

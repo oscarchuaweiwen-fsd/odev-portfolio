@@ -3,6 +3,7 @@ export const HeaderLinks = [
     "Experiences",
     "Projects",
     "Contact",
+    "Resume",
 ] as const;
 
 export const Descriptions = [
@@ -46,6 +47,7 @@ export const Projects = [
         image_url: "https://i.imgur.com/rAxogBB.png",
         description:
             "To develop a mobile applications using Flutter to my client to manage their business.",
-        github_link: "",
+        github_link:
+            "https://play.google.com/store/apps/details?id=com.odev.autoreflections",
     },
 ];

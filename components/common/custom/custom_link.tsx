@@ -16,35 +16,71 @@ const CustomLink = ({
     const BoxMotion = motion(Box);
     useContext(ThemeContext);
 
-    return (
-        <Link
-            key={link}
-            href={{ pathname: `/${link !== "Home" ? link.toLowerCase() : ""}` }}
-            style={{ textDecoration: "none" }}
-        >
-            <BoxMotion
-                initial={{ opacity: 0, y: -300 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+    if (link != "Resume") {
+        return (
+            <Link
+                key={link}
+                href={{
+                    pathname: `/${link !== "Home" ? link.toLowerCase() : ""}`,
+                }}
+                style={{ textDecoration: "none" }}
             >
-                <Typography
-                    sx={({ palette }) => ({
-                        color: isActive
-                            ? palette.mode == "dark"
-                                ? palette.custom.white
-                                : palette.custom.black
-                            : palette.custom.grey,
-                        "&:hover": {
-                            textDecoration: "underline",
-                            textUnderlineOffset: 4,
-                        },
-                    })}
+                <BoxMotion
+                    initial={{ opacity: 0, y: -300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
                 >
-                    {link}
-                </Typography>
-            </BoxMotion>
-        </Link>
-    );
+                    <Typography
+                        sx={({ palette }) => ({
+                            color: isActive
+                                ? palette.mode == "dark"
+                                    ? palette.custom.white
+                                    : palette.custom.black
+                                : palette.custom.grey,
+                            "&:hover": {
+                                textDecoration: "underline",
+                                textUnderlineOffset: 4,
+                            },
+                        })}
+                    >
+                        {link}
+                    </Typography>
+                </BoxMotion>
+            </Link>
+        );
+    } else {
+        return (
+            <Link
+                key={link}
+                href={{
+                    pathname: `/resume_oscar.pdf`,
+                }}
+                style={{ textDecoration: "none" }}
+            >
+                <BoxMotion
+                    initial={{ opacity: 0, y: -300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                >
+                    <Typography
+                        sx={({ palette }) => ({
+                            color: isActive
+                                ? palette.mode == "dark"
+                                    ? palette.custom.white
+                                    : palette.custom.black
+                                : palette.custom.grey,
+                            "&:hover": {
+                                textDecoration: "underline",
+                                textUnderlineOffset: 4,
+                            },
+                        })}
+                    >
+                        {link}
+                    </Typography>
+                </BoxMotion>
+            </Link>
+        );
+    }
 };
 
 export default CustomLink;
